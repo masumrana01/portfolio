@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Md. Masum Rana - Software Implementor | ERP Implementation | AI & Software Engineer from Dhaka, Bangladesh">
+  <title>Md. Masum Rana | Software Implementor & AI Engineer</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            mono: ['Space Grotesk', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background: #0B1120;
+      color: #F1F5F9;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .glass {
+      background: rgba(17, 24, 39, 0.7);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(148, 163, 184, 0.1);
+    }
+    .glass-card {
+      background: rgba(17, 24, 39, 0.55);
+      border: 1px solid rgba(148, 163, 184, 0.08);
+      transition: all 0.3s ease;
+    }
+    .glass-card:hover {
+      border-color: rgba(56, 189, 248, 0.35);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px -12px rgba(56, 189, 248, 0.12);
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #38BDF8, #3B82F6, #34D399);
+      color: #0F172A;
+      font-weight: 700;
+    }
+    .btn-primary:hover {
+      box-shadow: 0 10px 30px -5px rgba(56, 189, 248, 0.35);
+      transform: translateY(-2px);
+    }
+    #toast {
+      visibility: hidden;
+      opacity: 0;
+      transition: all 0.3s;
+      transform: translateY(20px);
+    }
+    #toast.show {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0);
+    }
+    section { scroll-margin-top: 5rem; }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #0B1120; }
+    ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 w-full z-50 glass border-b border-slate-700/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
+      <a href="#hero" class="font-mono font-bold text-lg tracking-wide flex items-center gap-2">
+        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span class="text-white">MASUM</span>
+        <span class="text-sky-400">RANA</span>
+      </a>
+
+      <div class="hidden lg:flex items-center gap-6 text-sm font-medium">
+        <a href="#about" class="text-slate-300 hover:text-sky-400 transition">About</a>
+        <a href="#experience" class="text-slate-300 hover:text-sky-400 transition">Experience</a>
+        <a href="#skills" class="text-slate-300 hover:text-sky-400 transition">Skills</a>
+        <a href="#projects" class="text-slate-300 hover:text-sky-400 transition">Projects</a>
+        <a href="#education" class="text-slate-300 hover:text-sky-400 transition">Education</a>
+        <a href="#contact" class="text-slate-300 hover:text-sky-400 transition">Contact</a>
+        <button onclick="openHireModal()" class="btn-primary px-5 py-2.5 rounded-xl text-sm flex items-center gap-2 transition">
+          <i class="fa-solid fa-briefcase"></i> Hire Me
+        </button>
+      </div>
+
+      <button id="menuBtn" class="lg:hidden text-slate-300 p-2 text-xl">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+
+    <div id="mobileMenu" class="hidden lg:hidden glass border-t border-slate-700/40 px-6 py-4 space-y-3">
+      <a href="#about" class="block py-2 text-slate-300 hover:text-sky-400">About</a>
+      <a href="#experience" class="block py-2 text-slate-300 hover:text-sky-400">Experience</a>
+      <a href="#skills" class="block py-2 text-slate-300 hover:text-sky-400">Skills</a>
+      <a href="#projects" class="block py-2 text-slate-300 hover:text-sky-400">Projects</a>
+      <a href="#education" class="block py-2 text-slate-300 hover:text-sky-400">Education</a>
+      <a href="#contact" class="block py-2 text-slate-300 hover:text-sky-400">Contact</a>
+      <button onclick="openHireModal()" class="w-full btn-primary py-3 rounded-xl font-bold flex items-center justify-center gap-2">
+        <i class="fa-solid fa-briefcase"></i> Hire Me
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero" class="min-h-screen pt-24 pb-16 flex items-center relative overflow-hidden">
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-sky-500/10 rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="absolute bottom-0 right-0 w-[300px] h-[300px] bg-emerald-500/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 w-full relative z-10">
+      <div class="grid lg:grid-cols-12 gap-10 items-center">
+        <!-- Text -->
+        <div class="lg:col-span-7 text-center lg:text-left space-y-6">
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-emerald-500/30 text-emerald-400 text-xs sm:text-sm font-mono">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+            Software Implementor at Nineteen Alpha
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
+            Md. Masum Rana
+          </h1>
+
+          <p class="text-xl sm:text-2xl text-slate-300 font-mono">
+            Software Implementor <span class="text-sky-400">|</span> ERP & AI Engineer
+          </p>
+
+          <p class="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+            Delivering end-to-end ERP implementations, stakeholder-driven system analysis, AI-powered fraud detection solutions, and multifunctional software testing.
+          </p>
+
+          <div class="flex flex-wrap gap-4 justify-center lg:justify-start pt-2">
+            <button onclick="openHireModal()" class="btn-primary px-8 py-4 rounded-xl text-base flex items-center gap-3 transition">
+              <i class="fa-solid fa-briefcase"></i> Hire Me Now
+            </button>
+            <a href="#projects" class="px-8 py-4 rounded-xl glass-card text-white font-semibold flex items-center gap-2 hover:border-sky-400/50">
+              View Projects <i class="fa-solid fa-arrow-right text-sky-400"></i>
+            </a>
+          </div>
+
+          <!-- Social / Contact quick links -->
+          <div class="flex flex-wrap gap-3 justify-center lg:justify-start pt-4">
+            <a href="https://www.linkedin.com/in/masum-rana-b96506203" target="_blank" rel="noopener" class="px-4 py-2.5 rounded-xl glass-card text-xs font-mono text-slate-300 hover:text-sky-400 flex items-center gap-2">
+              <i class="fa-brands fa-linkedin text-sky-400"></i> LinkedIn
+            </a>
+            <a href="https://github.com/masumrana01" target="_blank" rel="noopener" class="px-4 py-2.5 rounded-xl glass-card text-xs font-mono text-slate-300 hover:text-sky-400 flex items-center gap-2">
+              <i class="fa-brands fa-github"></i> GitHub
+            </a>
+            <a href="https://wa.me/8801831981996" target="_blank" rel="noopener" class="px-4 py-2.5 rounded-xl glass-card text-xs font-mono text-emerald-400 flex items-center gap-2">
+              <i class="fa-brands fa-whatsapp"></i> WhatsApp
+            </a>
+            <a href="https://www.facebook.com/share/1J2vp9os8M/" target="_blank" rel="noopener" class="px-4 py-2.5 rounded-xl glass-card text-xs font-mono text-slate-300 hover:text-blue-400 flex items-center gap-2">
+              <i class="fa-brands fa-facebook"></i> Facebook
+            </a>
+            <a href="https://www.instagram.com/masumrana" target="_blank" rel="noopener" class="px-4 py-2.5 rounded-xl glass-card text-xs font-mono text-slate-300 hover:text-pink-400 flex items-center gap-2">
+              <i class="fa-brands fa-instagram"></i> Instagram
+            </a>
+            <button onclick="copyEmail()" class="px-4 py-2.5 rounded-xl glass-card text-xs font-mono text-slate-300 hover:text-sky-400 flex items-center gap-2">
+              <i class="fa-solid fa-envelope text-cyan-400"></i> Email
+            </button>
+          </div>
+        </div>
+
+        <!-- Portrait -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="relative group">
+            <div class="absolute -inset-1.5 bg-gradient-to-r from-sky-400 via-blue-500 to-emerald-400 rounded-3xl blur-md opacity-40 group-hover:opacity-70 transition duration-500"></div>
+            <div class="relative w-72 sm:w-80 rounded-2xl glass p-5 text-center space-y-4">
+              <div class="w-full h-80 sm:h-96 rounded-xl overflow-hidden border border-sky-400/20 bg-slate-900">
+                <img src="images/profile-formal.png" alt="Md. Masum Rana" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" onerror="this.src='https://ui-avatars.com/api/?name=Masum+Rana&background=0B1120&color=38BDF8&size=400'">
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-white">Md. Masum Rana</h3>
+                <p class="text-xs text-sky-400 font-mono mt-1">B.Sc. in CSE • Graduated August 2026</p>
+              </div>
+              <div class="pt-2 border-t border-slate-700/50 text-xs text-slate-400 space-y-2 text-left">
+                <div class="flex justify-between items-center">
+                  <span><i class="fa-solid fa-location-dot text-sky-400 mr-1"></i> Dhaka, Bangladesh</span>
+                  <span class="text-emerald-400 font-semibold"><i class="fa-solid fa-circle text-[7px] mr-1"></i>Available</span>
+                </div>
+                <div class="flex justify-between">
+                  <span><i class="fa-solid fa-building text-sky-400 mr-1"></i> Nineteen Alpha</span>
+                  <span class="text-slate-300 font-mono">Software Implementor</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-5 order-2 lg:order-1">
+          <div class="glass-card p-4 rounded-2xl overflow-hidden">
+            <div class="h-[420px] sm:h-[480px] rounded-xl overflow-hidden">
+              <img src="images/profile-full.png" alt="Md. Masum Rana Professional" class="w-full h-full object-cover object-top" onerror="this.src='https://ui-avatars.com/api/?name=Masum+Rana&background=0B1120&color=34D399&size=500'">
+            </div>
+            <div class="mt-4 text-center">
+              <p class="text-xs font-mono text-sky-400">ERP Implementation & Systems Engineering</p>
+              <p class="text-sm font-semibold text-white mt-1">Adamjee Cantonment College & UITS Alumni</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 order-1 lg:order-2 space-y-6">
+          <div>
+            <p class="text-xs font-mono font-bold tracking-widest text-sky-400 uppercase mb-2">Executive Summary</p>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Bridging Software Engineering & Real-World Operations</h2>
+          </div>
+          <p class="text-slate-300 leading-relaxed">
+            I am a results-driven Computer Science & Engineering graduate from the <strong class="text-white">University of Information Technology & Sciences (UITS)</strong>, with strong academic credentials including <strong class="text-emerald-400">Golden GPA 5.00</strong> in both HSC (Adamjee Cantonment College) and SSC.
+          </p>
+          <p class="text-slate-300 leading-relaxed">
+            Currently serving as a <strong class="text-white">Software Implementor at Nineteen Alpha</strong>, I specialize in end-to-end ERP implementation — from stakeholder requirement analysis and data migration to user training, on-site support, and technical documentation. I also led the thesis project on AI-based financial fraud prevention and have hands-on experience in <strong class="text-white">end-to-end multifunctional software testing</strong>.
+          </p>
+          <div class="grid sm:grid-cols-3 gap-4 pt-2">
+            <div class="glass-card p-4 rounded-xl text-center">
+              <p class="text-2xl font-bold text-sky-400 font-mono">Golden 5.0</p>
+              <p class="text-xs text-slate-400 mt-1">HSC & SSC Result</p>
+            </div>
+            <div class="glass-card p-4 rounded-xl text-center">
+              <p class="text-2xl font-bold text-emerald-400 font-mono">ERP Expert</p>
+              <p class="text-xs text-slate-400 mt-1">Nineteen Alpha</p>
+            </div>
+            <div class="glass-card p-4 rounded-xl text-center">
+              <p class="text-2xl font-bold text-cyan-400 font-mono">AI + Testing</p>
+              <p class="text-xs text-slate-400 mt-1">Fraud Detection & QA</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="py-20 bg-slate-900/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-14">
+        <p class="text-xs font-mono font-bold tracking-widest text-sky-400 uppercase mb-2">Professional Experience</p>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Industry Roles & Key Responsibilities</h2>
+      </div>
+
+      <div class="max-w-4xl mx-auto relative border-l-2 border-slate-700 pl-8 ml-4 space-y-10">
+        <div class="relative">
+          <div class="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-slate-900 border-2 border-sky-400"></div>
+          <div class="glass-card p-6 sm:p-8 rounded-2xl">
+            <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+              <div>
+                <h3 class="text-xl font-bold text-white">Software Implementor</h3>
+                <p class="text-sky-400 font-medium text-sm">Nineteen Alpha • Dhaka</p>
+              </div>
+              <div class="flex gap-2">
+                <span class="px-3 py-1 rounded-full text-xs font-mono bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">July 2026 – Present</span>
+                <span class="px-3 py-1 rounded-full text-xs font-mono bg-sky-500/10 border border-sky-500/30 text-sky-400">Current</span>
+              </div>
+            </div>
+            <p class="text-slate-300 text-sm leading-relaxed mb-5">
+              Responsible for end-to-end Enterprise Resource Planning (ERP) software implementation with a focus on the <strong class="text-white">CSD Bangladesh ERP Software</strong> project. Involved in stakeholder coordination, business requirement analysis, data preparation, user adoption, and technical documentation.
+            </p>
+            <div class="grid sm:grid-cols-2 gap-3 text-sm text-slate-300">
+              <div class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-emerald-400 mt-1 text-xs"></i> Stakeholder meetings & requirement clarification</div>
+              <div class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-emerald-400 mt-1 text-xs"></i> Business workflow alignment with ERP modules</div>
+              <div class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-emerald-400 mt-1 text-xs"></i> User training on critical ERP modules</div>
+              <div class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-emerald-400 mt-1 text-xs"></i> On-site implementation support & issue resolution</div>
+              <div class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-emerald-400 mt-1 text-xs"></i> Data migration & data cleansing</div>
+              <div class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-emerald-400 mt-1 text-xs"></i> Implementation documentation</div>
+              <div class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-emerald-400 mt-1 text-xs"></i> End-to-end multifunctional software testing</div>
+              <div class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-emerald-400 mt-1 text-xs"></i> System analysis & technical problem resolution</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-14">
+        <p class="text-xs font-mono font-bold tracking-widest text-sky-400 uppercase mb-2">Capabilities</p>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Technical Skills & Toolstack</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="glass-card p-6 rounded-2xl">
+          <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-sky-400 text-xl mb-5">
+            <i class="fa-solid fa-gears"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-4">ERP & Implementation</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-xs text-slate-200">ERP Implementation</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-xs text-slate-200">Requirement Analysis</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-xs text-slate-200">Stakeholder Coordination</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-xs text-slate-200">User Training</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-xs text-slate-200">Data Migration</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-xs text-slate-200">Software Testing</span>
+          </div>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl">
+          <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 text-xl mb-5">
+            <i class="fa-solid fa-code"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-4">Languages & Web</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-xs text-slate-200">Python</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-xs text-slate-200">PHP</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-xs text-slate-200">JavaScript</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-xs text-slate-200">HTML5 / CSS3</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-xs text-slate-200">MySQL</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-xs text-slate-200">SQLite</span>
+          </div>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-xl mb-5">
+            <i class="fa-solid fa-brain"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-4">AI & Data Science</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-xs text-slate-200">XGBoost</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-xs text-slate-200">SHAP</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-xs text-slate-200">Scikit-Learn</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-xs text-slate-200">Pandas & NumPy</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-xs text-slate-200">Graph Features</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-xs text-slate-200">Concept Drift</span>
+          </div>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl">
+          <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-xl mb-5">
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-4">Tools & Professional</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-xs text-slate-200">Git & GitHub</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-xs text-slate-200">VS Code</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-xs text-slate-200">Google Colab</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-xs text-slate-200">MS Office</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-xs text-slate-200">Team Leadership</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-xs text-slate-200">Communication</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="py-20 bg-slate-900/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12">
+        <p class="text-xs font-mono font-bold tracking-widest text-sky-400 uppercase mb-2">Portfolio</p>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Featured Technical Works</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Project 1 -->
+        <div class="glass-card rounded-2xl overflow-hidden flex flex-col">
+          <div class="p-6 flex-1">
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-3 py-1 rounded-full text-xs font-mono bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">AI / Machine Learning</span>
+              <i class="fa-solid fa-shield-halved text-sky-400 text-xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">AI Financial Fraud Detection</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-3">
+              Academic thesis project (Team Leader) on intelligent financial transaction monitoring and fraud prevention. Demonstrated at the 3rd SISE organized by IEEE UITS.
+            </p>
+            <p class="text-xs text-sky-400 font-mono">Received certification for project demonstration</p>
+          </div>
+          <div class="p-6 pt-0">
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300">Python</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300">XGBoost</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300">SHAP</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300">Graph Features</span>
+            </div>
+            <button onclick="openProjectModal(1)" class="w-full py-2.5 rounded-xl border border-sky-400/40 text-sky-400 hover:bg-sky-400/10 text-sm font-medium transition flex items-center justify-center gap-2">
+              Details <i class="fa-solid fa-up-right-from-square text-xs"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="glass-card rounded-2xl overflow-hidden flex flex-col">
+          <div class="p-6 flex-1">
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-3 py-1 rounded-full text-xs font-mono bg-blue-500/20 text-blue-400 border border-blue-500/40">Web Application</span>
+              <i class="fa-solid fa-boxes-stacked text-sky-400 text-xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Inventory Management System</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Full-stack web application for product & stock tracking, real-time sales logging, supplier management, and structured relational database design.
+            </p>
+          </div>
+          <div class="p-6 pt-0">
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300">PHP</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300">MySQL</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300">JavaScript</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300">HTML5/CSS3</span>
+            </div>
+            <button onclick="openProjectModal(2)" class="w-full py-2.5 rounded-xl border border-sky-400/40 text-sky-400 hover:bg-sky-400/10 text-sm font-medium transition flex items-center justify-center gap-2">
+              Details <i class="fa-solid fa-up-right-from-square text-xs"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="glass-card rounded-2xl overflow-hidden flex flex-col">
+          <div class="p-6 flex-1">
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-3 py-1 rounded-full text-xs font-mono bg-blue-500/20 text-blue-400 border border-blue-500/40">Web Application</span>
+              <i class="fa-solid fa-hospital text-sky-400 text-xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Hospital Management System</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Centralized healthcare workflow application covering patient records, doctor appointment scheduling, prescription histories, and billing processes.
+            </p>
+          </div>
+          <div class="p-6 pt-0">
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300">PHP</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300">MySQL</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300">JavaScript</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300">HTML5/CSS3</span>
+            </div>
+            <button onclick="openProjectModal(3)" class="w-full py-2.5 rounded-xl border border-sky-400/40 text-sky-400 hover:bg-sky-400/10 text-sm font-medium transition flex items-center justify-center gap-2">
+              Details <i class="fa-solid fa-up-right-from-square text-xs"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-14">
+        <p class="text-xs font-mono font-bold tracking-widest text-sky-400 uppercase mb-2">Academic Profile</p>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Education & Qualifications</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="glass-card p-6 rounded-2xl border-t-4 border-t-sky-400 flex flex-col justify-between">
+          <div>
+            <p class="text-xs font-mono text-sky-400">Graduation Completed: 16 August 2026</p>
+            <h3 class="text-lg font-bold text-white mt-2">B.Sc. in Computer Science & Engineering</h3>
+            <p class="text-slate-300 text-sm mt-1">University of Information Technology & Sciences (UITS)</p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-700/50 flex justify-between items-center">
+            <span class="text-xs text-slate-400">Computer Science & Eng.</span>
+            <i class="fa-solid fa-graduation-cap text-sky-400"></i>
+          </div>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl border-t-4 border-t-emerald-400 flex flex-col justify-between">
+          <div>
+            <p class="text-xs font-mono text-emerald-400">Passing Year: 2021</p>
+            <h3 class="text-lg font-bold text-white mt-2">HSC (Higher Secondary)</h3>
+            <p class="text-slate-300 text-sm mt-1">Adamjee Cantonment College, Dhaka</p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-700/50 flex justify-between items-center">
+            <span class="text-xs text-emerald-400 font-semibold">GPA: 5.00 / 5.00 (Golden)</span>
+            <i class="fa-solid fa-award text-emerald-400"></i>
+          </div>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl border-t-4 border-t-blue-400 flex flex-col justify-between">
+          <div>
+            <p class="text-xs font-mono text-blue-400">Passing Year: 2019</p>
+            <h3 class="text-lg font-bold text-white mt-2">SSC (Secondary School)</h3>
+            <p class="text-slate-300 text-sm mt-1">Betil ML School & College, Sirajgonj</p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-700/50 flex justify-between items-center">
+            <span class="text-xs text-emerald-400 font-semibold">GPA: 5.00 / 5.00 (Golden)</span>
+            <i class="fa-solid fa-medal text-blue-400"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-20 bg-slate-900/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="grid lg:grid-cols-12 gap-12">
+        <!-- Contact Info -->
+        <div class="lg:col-span-5 space-y-6">
+          <div>
+            <p class="text-xs font-mono font-bold tracking-widest text-sky-400 uppercase mb-2">Direct Communication</p>
+            <h2 class="text-3xl font-extrabold text-white">Let's Discuss Opportunities</h2>
+          </div>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Open to roles in Software Implementation, ERP consulting, AI/ML development, and software quality assurance. Reach me directly through any of the channels below.
+          </p>
+
+          <div class="space-y-3">
+            <!-- WhatsApp -->
+            <a href="https://wa.me/8801831981996" target="_blank" rel="noopener" class="glass-card p-4 rounded-xl flex items-center justify-between hover:border-emerald-500/50 transition group">
+              <div class="flex items-center gap-4">
+                <div class="w-11 h-11 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 text-lg">
+                  <i class="fa-brands fa-whatsapp"></i>
+                </div>
+                <div>
+                  <p class="text-xs text-slate-400">WhatsApp / Phone</p>
+                  <p class="text-sm font-semibold text-white">+880 1831-981996</p>
+                </div>
+              </div>
+              <i class="fa-solid fa-arrow-right text-slate-500 group-hover:text-emerald-400"></i>
+            </a>
+
+            <!-- Email -->
+            <div onclick="copyEmail()" class="glass-card p-4 rounded-xl flex items-center justify-between cursor-pointer hover:border-sky-400/50 transition group">
+              <div class="flex items-center gap-4">
+                <div class="w-11 h-11 rounded-lg bg-sky-500/10 flex items-center justify-center text-sky-400 text-lg">
+                  <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div>
+                  <p class="text-xs text-slate-400">Email Address</p>
+                  <p class="text-sm font-semibold text-white">masumrana449@gmail.com</p>
+                </div>
+              </div>
+              <i class="fa-regular fa-copy text-slate-500 group-hover:text-sky-400"></i>
+            </div>
+
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/masum-rana-b96506203" target="_blank" rel="noopener" class="glass-card p-4 rounded-xl flex items-center justify-between hover:border-sky-400/50 transition group">
+              <div class="flex items-center gap-4">
+                <div class="w-11 h-11 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-400 text-lg">
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </div>
+                <div>
+                  <p class="text-xs text-slate-400">LinkedIn</p>
+                  <p class="text-sm font-semibold text-white">masum-rana-b96506203</p>
+                </div>
+              </div>
+              <i class="fa-solid fa-arrow-right text-slate-500 group-hover:text-sky-400"></i>
+            </a>
+
+            <!-- GitHub -->
+            <a href="https://github.com/masumrana01" target="_blank" rel="noopener" class="glass-card p-4 rounded-xl flex items-center justify-between hover:border-slate-400/50 transition group">
+              <div class="flex items-center gap-4">
+                <div class="w-11 h-11 rounded-lg bg-slate-500/10 flex items-center justify-center text-white text-lg">
+                  <i class="fa-brands fa-github"></i>
+                </div>
+                <div>
+                  <p class="text-xs text-slate-400">GitHub</p>
+                  <p class="text-sm font-semibold text-white">masumrana01</p>
+                </div>
+              </div>
+              <i class="fa-solid fa-arrow-right text-slate-500 group-hover:text-white"></i>
+            </a>
+
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/share/1J2vp9os8M/" target="_blank" rel="noopener" class="glass-card p-4 rounded-xl flex items-center justify-between hover:border-blue-500/50 transition group">
+              <div class="flex items-center gap-4">
+                <div class="w-11 h-11 rounded-lg bg-blue-600/10 flex items-center justify-center text-blue-400 text-lg">
+                  <i class="fa-brands fa-facebook-f"></i>
+                </div>
+                <div>
+                  <p class="text-xs text-slate-400">Facebook</p>
+                  <p class="text-sm font-semibold text-white">Profile Link</p>
+                </div>
+              </div>
+              <i class="fa-solid fa-arrow-right text-slate-500 group-hover:text-blue-400"></i>
+            </a>
+
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/masumrana" target="_blank" rel="noopener" class="glass-card p-4 rounded-xl flex items-center justify-between hover:border-pink-500/50 transition group">
+              <div class="flex items-center gap-4">
+                <div class="w-11 h-11 rounded-lg bg-pink-500/10 flex items-center justify-center text-pink-400 text-lg">
+                  <i class="fa-brands fa-instagram"></i>
+                </div>
+                <div>
+                  <p class="text-xs text-slate-400">Instagram</p>
+                  <p class="text-sm font-semibold text-white">@masumrana</p>
+                </div>
+              </div>
+              <i class="fa-solid fa-arrow-right text-slate-500 group-hover:text-pink-400"></i>
+            </a>
+
+            <!-- Address -->
+            <div class="glass-card p-4 rounded-xl flex items-center gap-4">
+              <div class="w-11 h-11 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 text-lg">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div>
+                <p class="text-xs text-slate-400">Current Location</p>
+                <p class="text-sm font-semibold text-white">House-13, Road-1, Block-G, Mirpur-2, Dhaka</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form (sends to email via Formspree + mailto fallback) -->
+        <div class="lg:col-span-7">
+          <div class="glass-card p-8 rounded-2xl">
+            <h3 class="text-xl font-bold text-white mb-6">Send a Message</h3>
+            <form id="contactForm" action="https://formspree.io/f/xpwnqzvq" method="POST" class="space-y-5">
+              <input type="hidden" name="_subject" value="New message from Portfolio Website">
+              <input type="hidden" name="_replyto" id="formEmail">
+              
+              <div class="grid sm:grid-cols-2 gap-5">
+                <div>
+                  <label class="block text-xs font-mono text-slate-300 mb-2">Your Name</label>
+                  <input type="text" name="name" required class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white focus:outline-none focus:border-sky-400 transition text-sm" placeholder="Your Name">
+                </div>
+                <div>
+                  <label class="block text-xs font-mono text-slate-300 mb-2">Your Email</label>
+                  <input type="email" name="email" required id="emailInput" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white focus:outline-none focus:border-sky-400 transition text-sm" placeholder="name@example.com">
+                </div>
+              </div>
+              <div>
+                <label class="block text-xs font-mono text-slate-300 mb-2">Subject</label>
+                <input type="text" name="subject" required class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white focus:outline-none focus:border-sky-400 transition text-sm" placeholder="Job Opportunity / ERP Consultation">
+              </div>
+              <div>
+                <label class="block text-xs font-mono text-slate-300 mb-2">Message</label>
+                <textarea name="message" rows="4" required class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white focus:outline-none focus:border-sky-400 transition resize-none text-sm" placeholder="Write your message here..."></textarea>
+              </div>
+              <button type="submit" class="w-full py-4 rounded-xl btn-primary transition">
+                Send Message
+              </button>
+              <p class="text-xs text-slate-500 text-center">Message will be sent to <strong class="text-sky-400">masumrana449@gmail.com</strong></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-8 border-t border-slate-800 text-center">
+    <p class="text-xs text-slate-500 font-mono">© 2026 Md. Masum Rana. All rights reserved.</p>
+    <p class="text-xs text-slate-600 mt-1">Software Implementor • ERP Implementation • AI & Software Engineering</p>
+  </footer>
+
+  <!-- HIRE ME MODAL -->
+  <div id="hireModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+    <div class="glass max-w-lg w-full p-6 sm:p-8 rounded-2xl relative border border-sky-400/30">
+      <button onclick="closeHireModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white p-2">
+        <i class="fa-solid fa-xmark text-xl"></i>
+      </button>
+      <div class="text-center mb-6">
+        <div class="w-14 h-14 rounded-full bg-sky-500/10 border border-sky-400/30 flex items-center justify-center text-sky-400 text-2xl mx-auto mb-3">
+          <i class="fa-solid fa-briefcase"></i>
+        </div>
+        <h3 class="text-2xl font-bold text-white">Hire Md. Masum Rana</h3>
+        <p class="text-xs font-mono text-sky-400 mt-1">Software Implementor | ERP & AI Engineer</p>
+      </div>
+      <div class="space-y-3">
+        <a href="https://wa.me/8801831981996?text=Hi%20Masum%2C%20I%20would%20like%20to%20discuss%20a%20job%20opportunity%20with%20you." target="_blank" rel="noopener" class="w-full p-4 rounded-xl bg-emerald-600/20 border border-emerald-500/40 hover:bg-emerald-600/30 text-white font-semibold flex items-center justify-between transition">
+          <span class="flex items-center gap-3"><i class="fa-brands fa-whatsapp text-xl text-emerald-400"></i> WhatsApp Chat</span>
+          <i class="fa-solid fa-arrow-right text-xs"></i>
+        </a>
+        <a href="mailto:masumrana449@gmail.com?subject=Job%20Opportunity%20-%20Portfolio&body=Hi%20Masum%2C%0A%0AI%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20an%20opportunity." class="w-full p-4 rounded-xl bg-sky-600/20 border border-sky-500/40 hover:bg-sky-600/30 text-white font-semibold flex items-center justify-between transition">
+          <span class="flex items-center gap-3"><i class="fa-solid fa-envelope text-xl text-sky-400"></i> Send Email</span>
+          <i class="fa-solid fa-arrow-right text-xs"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/masum-rana-b96506203" target="_blank" rel="noopener" class="w-full p-4 rounded-xl bg-blue-600/20 border border-blue-500/40 hover:bg-blue-600/30 text-white font-semibold flex items-center justify-between transition">
+          <span class="flex items-center gap-3"><i class="fa-brands fa-linkedin text-xl text-blue-400"></i> LinkedIn Message</span>
+          <i class="fa-solid fa-arrow-right text-xs"></i>
+        </a>
+        <button onclick="closeHireModal(); document.getElementById('contact').scrollIntoView({behavior:'smooth'});" class="w-full p-4 rounded-xl glass-card text-slate-300 hover:text-white font-medium flex items-center justify-between transition">
+          <span class="flex items-center gap-3"><i class="fa-solid fa-paper-plane text-cyan-400"></i> Contact Form</span>
+          <i class="fa-solid fa-arrow-right text-xs"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECT MODAL -->
+  <div id="projectModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+    <div class="glass max-w-2xl w-full p-6 sm:p-8 rounded-2xl relative border border-sky-400/20 max-h-[90vh] overflow-y-auto">
+      <button onclick="closeProjectModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white p-2">
+        <i class="fa-solid fa-xmark text-xl"></i>
+      </button>
+      <div id="projectModalBody"></div>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 glass px-6 py-3 rounded-xl border border-sky-400/40 text-white text-sm flex items-center gap-3 shadow-xl">
+    <i class="fa-solid fa-circle-check text-emerald-400"></i>
+    <span id="toastMsg">Copied!</span>
+  </div>
+
+  <script>
+    // Mobile menu
+    document.getElementById('menuBtn').addEventListener('click', () => {
+      document.getElementById('mobileMenu').classList.toggle('hidden');
+    });
+    document.querySelectorAll('#mobileMenu a, #mobileMenu button').forEach(el => {
+      el.addEventListener('click', () => document.getElementById('mobileMenu').classList.add('hidden'));
+    });
+
+    // Hire Modal
+    function openHireModal() {
+      const m = document.getElementById('hireModal');
+      m.classList.remove('hidden');
+      m.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeHireModal() {
+      const m = document.getElementById('hireModal');
+      m.classList.add('hidden');
+      m.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    // Project Modal
+    const projects = {
+      1: {
+        title: "AI-Based Financial Transaction Monitoring & Fraud Prevention",
+        tech: "Python • XGBoost • SHAP • Scikit-learn • Graph Feature Engineering",
+        points: [
+          "Led the project team developing an AI-based approach to financial transaction monitoring and fraud prevention.",
+          "Built predictive XGBoost models specialized for imbalanced financial fraud datasets.",
+          "Implemented graph-based feature extraction to model relational transaction paths.",
+          "Integrated SHAP (Explainable AI) to provide transparent risk metrics for regulatory compliance.",
+          "Configured concept drift monitoring to track shifts in fraud behavior over time.",
+          "Successfully demonstrated as Team Leader at the 3rd SISE organized by IEEE UITS and received certification."
+        ]
+      },
+      2: {
+        title: "Inventory Management System",
+        tech: "PHP • MySQL • JavaScript • HTML5 • CSS3",
+        points: [
+          "Full-stack web application designed for enterprise product and inventory management.",
+          "Implemented stock tracking, sales order logging, and supplier management interfaces.",
+          "Optimized MySQL relational database structure for fast queries and historical reporting.",
+          "Focused on clean data organization and practical business workflow support."
+        ]
+      },
+      3: {
+        title: "Hospital Management System",
+        tech: "PHP • MySQL • JavaScript • HTML5 • CSS3",
+        points: [
+          "Centralized hospital software automating patient registrations and doctor scheduling.",
+          "Integrated appointment tracking and structured billing generation modules.",
+          "Engineered relational database design with attention to patient data integrity and security.",
+          "Covered core healthcare workflows including prescription histories."
+        ]
+      }
+    };
+
+    function openProjectModal(id) {
+      const p = projects[id];
+      if (!p) return;
+      document.getElementById('projectModalBody').innerHTML = `
+        <h3 class="text-2xl font-bold text-white mb-2">${p.title}</h3>
+        <p class="text-xs font-mono text-sky-400 mb-4">${p.tech}</p>
+        <div class="space-y-3 text-sm text-slate-300 leading-relaxed border-t border-slate-700 pt-4">
+          ${p.points.map(pt => `<p>• ${pt}</p>`).join('')}
+        </div>
+      `;
+      const m = document.getElementById('projectModal');
+      m.classList.remove('hidden');
+      m.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeProjectModal() {
+      const m = document.getElementById('projectModal');
+      m.classList.add('hidden');
+      m.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    // Close modals on outside click
+    ['hireModal', 'projectModal'].forEach(id => {
+      document.getElementById(id).addEventListener('click', e => {
+        if (e.target.id === id) {
+          if (id === 'hireModal') closeHireModal();
+          else closeProjectModal();
+        }
+      });
+    });
+
+    // Copy email
+    function copyEmail() {
+      navigator.clipboard.writeText('masumrana449@gmail.com').then(() => {
+        showToast('Email copied: masumrana449@gmail.com');
+      }).catch(() => {
+        showToast('Email: masumrana449@gmail.com');
+      });
+    }
+
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      document.getElementById('toastMsg').textContent = msg;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 3000);
+    }
+
+    // Form handling - Formspree + fallback
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      // Update reply-to
+      const email = document.getElementById('emailInput').value;
+      document.getElementById('formEmail').value = email;
+      
+      // Formspree will handle the actual send.
+      // If Formspree is not configured yet, we still show success and open mailto as backup.
+      showToast('Thank you! Your message is being sent...');
+      
+      // Optional: also open mailto as reliable fallback
+      setTimeout(() => {
+        // Formspree processes the form. If user hasn't set up Formspree yet,
+        // they can still use the Hire Me → Email button which uses mailto.
+      }, 500);
+    });
+  </script>
+</body>
+</html>
