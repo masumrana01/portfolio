@@ -169,13 +169,13 @@
           </div>
         </div>
 
-        <!-- Portrait -->
+        <!-- Portrait (1st Image: profile-formal.png) -->
         <div class="lg:col-span-5 flex justify-center">
           <div class="relative group">
             <div class="absolute -inset-1.5 bg-gradient-to-r from-sky-400 via-blue-500 to-emerald-400 rounded-3xl blur-md opacity-40 group-hover:opacity-70 transition duration-500"></div>
             <div class="relative w-72 sm:w-80 rounded-2xl glass p-5 text-center space-y-4">
               <div class="w-full h-80 sm:h-96 rounded-xl overflow-hidden border border-sky-400/20 bg-slate-900">
-                <img src="images/profile-formal.png" alt="Md. Masum Rana" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" onerror="this.src='https://ui-avatars.com/api/?name=Masum+Rana&background=0B1120&color=38BDF8&size=400'">
+                <img src="profile-formal.png" alt="Md. Masum Rana" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" onerror="this.src='https://ui-avatars.com/api/?name=Masum+Rana&background=0B1120&color=38BDF8&size=400'">
               </div>
               <div>
                 <h3 class="text-xl font-bold text-white">Md. Masum Rana</h3>
@@ -202,10 +202,11 @@
   <section id="about" class="py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <div class="grid lg:grid-cols-12 gap-12 items-center">
+        <!-- 2nd Image: profile-full.png -->
         <div class="lg:col-span-5 order-2 lg:order-1">
           <div class="glass-card p-4 rounded-2xl overflow-hidden">
-            <div class="h-[420px] sm:h-[480px] rounded-xl overflow-hidden">
-              <img src="images/profile-full.png" alt="Md. Masum Rana Professional" class="w-full h-full object-cover object-top" onerror="this.src='https://ui-avatars.com/api/?name=Masum+Rana&background=0B1120&color=34D399&size=500'">
+            <div class="h-[420px] sm:h-[480px] rounded-xl overflow-hidden bg-slate-900">
+              <img src="profile-full.png" alt="Md. Masum Rana Professional" class="w-full h-full object-cover object-top" onerror="this.src='https://ui-avatars.com/api/?name=Masum+Rana&background=0B1120&color=34D399&size=500'">
             </div>
             <div class="mt-4 text-center">
               <p class="text-xs font-mono text-sky-400">ERP Implementation & Systems Engineering</p>
@@ -523,304 +524,290 @@
             </a>
 
             <!-- Email -->
-            <div onclick="copyEmail()" class="glass-card p-4 rounded-xl flex items-center justify-between cursor-pointer hover:border-sky-400/50 transition group">
+            <div onclick="copyEmail()" class="glass-card p-4 rounded-xl flex items-center justify-between cursor-pointer hover:border-sky-500/50 transition group">
               <div class="flex items-center gap-4">
                 <div class="w-11 h-11 rounded-lg bg-sky-500/10 flex items-center justify-center text-sky-400 text-lg">
                   <i class="fa-solid fa-envelope"></i>
                 </div>
                 <div>
-                  <p class="text-xs text-slate-400">Email Address</p>
-                  <p class="text-sm font-semibold text-white">masumrana449@gmail.com</p>
+                  <p class="text-xs text-slate-400">Email (Click to copy)</p>
+                  <p id="emailText" class="text-sm font-semibold text-white break-all">ranamasum2877@gmail.com</p>
                 </div>
               </div>
-              <i class="fa-regular fa-copy text-slate-500 group-hover:text-sky-400"></i>
+              <i class="fa-solid fa-copy text-slate-500 group-hover:text-sky-400"></i>
             </div>
 
-            <!-- LinkedIn -->
-            <a href="https://www.linkedin.com/in/masum-rana-b96506203" target="_blank" rel="noopener" class="glass-card p-4 rounded-xl flex items-center justify-between hover:border-sky-400/50 transition group">
-              <div class="flex items-center gap-4">
-                <div class="w-11 h-11 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-400 text-lg">
-                  <i class="fa-brands fa-linkedin-in"></i>
-                </div>
-                <div>
-                  <p class="text-xs text-slate-400">LinkedIn</p>
-                  <p class="text-sm font-semibold text-white">masum-rana-b96506203</p>
-                </div>
-              </div>
-              <i class="fa-solid fa-arrow-right text-slate-500 group-hover:text-sky-400"></i>
-            </a>
-
-            <!-- GitHub -->
-            <a href="https://github.com/masumrana01" target="_blank" rel="noopener" class="glass-card p-4 rounded-xl flex items-center justify-between hover:border-slate-400/50 transition group">
-              <div class="flex items-center gap-4">
-                <div class="w-11 h-11 rounded-lg bg-slate-500/10 flex items-center justify-center text-white text-lg">
-                  <i class="fa-brands fa-github"></i>
-                </div>
-                <div>
-                  <p class="text-xs text-slate-400">GitHub</p>
-                  <p class="text-sm font-semibold text-white">masumrana01</p>
-                </div>
-              </div>
-              <i class="fa-solid fa-arrow-right text-slate-500 group-hover:text-white"></i>
-            </a>
-
-            <!-- Facebook -->
-            <a href="https://www.facebook.com/share/1J2vp9os8M/" target="_blank" rel="noopener" class="glass-card p-4 rounded-xl flex items-center justify-between hover:border-blue-500/50 transition group">
-              <div class="flex items-center gap-4">
-                <div class="w-11 h-11 rounded-lg bg-blue-600/10 flex items-center justify-center text-blue-400 text-lg">
-                  <i class="fa-brands fa-facebook-f"></i>
-                </div>
-                <div>
-                  <p class="text-xs text-slate-400">Facebook</p>
-                  <p class="text-sm font-semibold text-white">Profile Link</p>
-                </div>
-              </div>
-              <i class="fa-solid fa-arrow-right text-slate-500 group-hover:text-blue-400"></i>
-            </a>
-
-            <!-- Instagram -->
-            <a href="https://www.instagram.com/masumrana" target="_blank" rel="noopener" class="glass-card p-4 rounded-xl flex items-center justify-between hover:border-pink-500/50 transition group">
-              <div class="flex items-center gap-4">
-                <div class="w-11 h-11 rounded-lg bg-pink-500/10 flex items-center justify-center text-pink-400 text-lg">
-                  <i class="fa-brands fa-instagram"></i>
-                </div>
-                <div>
-                  <p class="text-xs text-slate-400">Instagram</p>
-                  <p class="text-sm font-semibold text-white">@masumrana</p>
-                </div>
-              </div>
-              <i class="fa-solid fa-arrow-right text-slate-500 group-hover:text-pink-400"></i>
-            </a>
-
-            <!-- Address -->
+            <!-- Location -->
             <div class="glass-card p-4 rounded-xl flex items-center gap-4">
-              <div class="w-11 h-11 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 text-lg">
+              <div class="w-11 h-11 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-400 text-lg">
                 <i class="fa-solid fa-location-dot"></i>
               </div>
               <div>
-                <p class="text-xs text-slate-400">Current Location</p>
-                <p class="text-sm font-semibold text-white">Mirpur,Dhaka-1216,Bangladesh</p>
+                <p class="text-xs text-slate-400">Location</p>
+                <p class="text-sm font-semibold text-white">Dhaka, Bangladesh</p>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Contact Form (sends to email via Formspree + mailto fallback) -->
+        <!-- Contact Form (Formspree) -->
         <div class="lg:col-span-7">
-          <div class="glass-card p-8 rounded-2xl">
-            <h3 class="text-xl font-bold text-white mb-6">Send a Message</h3>
-            <form id="contactForm" action="https://formspree.io/f/xpwnqzvq" method="POST" class="space-y-5">
-              <input type="hidden" name="_subject" value="New message from Portfolio Website">
-              <input type="hidden" name="_replyto" id="formEmail">
-              
-              <div class="grid sm:grid-cols-2 gap-5">
-                <div>
-                  <label class="block text-xs font-mono text-slate-300 mb-2">Your Name</label>
-                  <input type="text" name="name" required class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white focus:outline-none focus:border-sky-400 transition text-sm" placeholder="Your Name">
-                </div>
-                <div>
-                  <label class="block text-xs font-mono text-slate-300 mb-2">Your Email</label>
-                  <input type="email" name="email" required id="emailInput" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white focus:outline-none focus:border-sky-400 transition text-sm" placeholder="name@example.com">
-                </div>
+          <form id="contactForm" action="https://formspree.io/f/mkjrqova" method="POST" class="glass-card p-6 sm:p-8 rounded-2xl space-y-5">
+            <h3 class="text-xl font-bold text-white">Send a Direct Message</h3>
+            <input type="hidden" name="_subject" value="New Portfolio Inquiry for Md. Masum Rana">
+
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-mono text-slate-400 mb-2">Your Name *</label>
+                <input type="text" name="name" required placeholder="John Doe" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:border-sky-400 focus:outline-none">
               </div>
               <div>
-                <label class="block text-xs font-mono text-slate-300 mb-2">Subject</label>
-                <input type="text" name="subject" required class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white focus:outline-none focus:border-sky-400 transition text-sm" placeholder="Job Opportunity / ERP Consultation">
+                <label class="block text-xs font-mono text-slate-400 mb-2">Email Address *</label>
+                <input type="email" name="email" required placeholder="name@company.com" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:border-sky-400 focus:outline-none">
               </div>
-              <div>
-                <label class="block text-xs font-mono text-slate-300 mb-2">Message</label>
-                <textarea name="message" rows="4" required class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white focus:outline-none focus:border-sky-400 transition resize-none text-sm" placeholder="Write your message here..."></textarea>
-              </div>
-              <button type="submit" class="w-full py-4 rounded-xl btn-primary transition">
-                Send Message
-              </button>
-              <p class="text-xs text-slate-500 text-center">Message will be sent to <strong class="text-sky-400">masumrana449@gmail.com</strong></p>
-            </form>
-          </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-mono text-slate-400 mb-2">Subject</label>
+              <input type="text" name="subject" placeholder="ERP Implementation / Job Opportunity" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:border-sky-400 focus:outline-none">
+            </div>
+
+            <div>
+              <label class="block text-xs font-mono text-slate-400 mb-2">Message *</label>
+              <textarea name="message" rows="4" required placeholder="Write your message here..." class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:border-sky-400 focus:outline-none"></textarea>
+            </div>
+
+            <button type="submit" id="contactSubmitBtn" class="w-full btn-primary py-3.5 rounded-xl flex items-center justify-center gap-2 transition">
+              <i class="fa-solid fa-paper-plane"></i> Send Message
+            </button>
+          </form>
         </div>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="py-8 border-t border-slate-800 text-center">
-    <p class="text-xs text-slate-500 font-mono">© 2026 Md. Masum Rana. All rights reserved.</p>
-    <p class="text-xs text-slate-600 mt-1">Software Implementor • ERP Implementation • AI & Software Engineering</p>
+  <footer class="py-10 border-t border-slate-800 text-center text-sm text-slate-400">
+    <div class="max-w-7xl mx-auto px-4 space-y-3">
+      <div class="flex justify-center gap-5 text-base">
+        <a href="https://www.linkedin.com/in/masum-rana-b96506203" target="_blank" rel="noopener" class="hover:text-sky-400"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://github.com/masumrana01" target="_blank" rel="noopener" class="hover:text-white"><i class="fa-brands fa-github"></i></a>
+        <a href="https://wa.me/8801831981996" target="_blank" rel="noopener" class="hover:text-emerald-400"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://www.facebook.com/share/1J2vp9os8M/" target="_blank" rel="noopener" class="hover:text-blue-400"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.instagram.com/masumrana" target="_blank" rel="noopener" class="hover:text-pink-400"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+      <p class="font-mono text-xs text-slate-500">Md. Masum Rana • Dhaka, Bangladesh • Software Implementor & AI Engineer</p>
+    </div>
   </footer>
 
-  <!-- HIRE ME MODAL -->
-  <div id="hireModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/80 backdrop-blur-md">
-    <div class="glass max-w-lg w-full p-6 sm:p-8 rounded-2xl relative border border-sky-400/30">
-      <button onclick="closeHireModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white p-2">
-        <i class="fa-solid fa-xmark text-xl"></i>
+  <!-- HIRE MODAL (Formspree) -->
+  <div id="hireModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/75 backdrop-blur-sm p-4">
+    <div class="glass max-w-lg w-full rounded-2xl p-6 sm:p-8 relative">
+      <button onclick="closeHireModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl">
+        <i class="fa-solid fa-xmark"></i>
       </button>
-      <div class="text-center mb-6">
-        <div class="w-14 h-14 rounded-full bg-sky-500/10 border border-sky-400/30 flex items-center justify-center text-sky-400 text-2xl mx-auto mb-3">
-          <i class="fa-solid fa-briefcase"></i>
+      <h3 class="text-2xl font-bold text-white mb-1">Hire Me</h3>
+      <p class="text-slate-400 text-sm mb-6">Send a job or project inquiry directly to my inbox.</p>
+
+      <form id="hireForm" action="https://formspree.io/f/mkjrqova" method="POST" class="space-y-4">
+        <input type="hidden" name="_subject" value="New Hire Me Inquiry - Portfolio">
+        <div>
+          <label class="block text-xs font-mono text-slate-400 mb-1.5">Your Name *</label>
+          <input type="text" name="name" required placeholder="Your full name" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:border-sky-400 focus:outline-none">
         </div>
-        <h3 class="text-2xl font-bold text-white">Hire Md. Masum Rana</h3>
-        <p class="text-xs font-mono text-sky-400 mt-1">Software Implementor | ERP & AI Engineer</p>
-      </div>
-      <div class="space-y-3">
-        <a href="https://wa.me/8801831981996?text=Hi%20Masum%2C%20I%20would%20like%20to%20discuss%20a%20job%20opportunity%20with%20you." target="_blank" rel="noopener" class="w-full p-4 rounded-xl bg-emerald-600/20 border border-emerald-500/40 hover:bg-emerald-600/30 text-white font-semibold flex items-center justify-between transition">
-          <span class="flex items-center gap-3"><i class="fa-brands fa-whatsapp text-xl text-emerald-400"></i> WhatsApp Chat</span>
-          <i class="fa-solid fa-arrow-right text-xs"></i>
-        </a>
-        <a href="mailto:masumrana449@gmail.com?subject=Job%20Opportunity%20-%20Portfolio&body=Hi%20Masum%2C%0A%0AI%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20an%20opportunity." class="w-full p-4 rounded-xl bg-sky-600/20 border border-sky-500/40 hover:bg-sky-600/30 text-white font-semibold flex items-center justify-between transition">
-          <span class="flex items-center gap-3"><i class="fa-solid fa-envelope text-xl text-sky-400"></i> Send Email</span>
-          <i class="fa-solid fa-arrow-right text-xs"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/masum-rana-b96506203" target="_blank" rel="noopener" class="w-full p-4 rounded-xl bg-blue-600/20 border border-blue-500/40 hover:bg-blue-600/30 text-white font-semibold flex items-center justify-between transition">
-          <span class="flex items-center gap-3"><i class="fa-brands fa-linkedin text-xl text-blue-400"></i> LinkedIn Message</span>
-          <i class="fa-solid fa-arrow-right text-xs"></i>
-        </a>
-        <button onclick="closeHireModal(); document.getElementById('contact').scrollIntoView({behavior:'smooth'});" class="w-full p-4 rounded-xl glass-card text-slate-300 hover:text-white font-medium flex items-center justify-between transition">
-          <span class="flex items-center gap-3"><i class="fa-solid fa-paper-plane text-cyan-400"></i> Contact Form</span>
-          <i class="fa-solid fa-arrow-right text-xs"></i>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-mono text-slate-400 mb-1.5">Email *</label>
+            <input type="email" name="email" required placeholder="your@email.com" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:border-sky-400 focus:outline-none">
+          </div>
+          <div>
+            <label class="block text-xs font-mono text-slate-400 mb-1.5">Company / Organization</label>
+            <input type="text" name="company" placeholder="Company name" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:border-sky-400 focus:outline-none">
+          </div>
+        </div>
+        <div>
+          <label class="block text-xs font-mono text-slate-400 mb-1.5">Role / Project Type</label>
+          <select name="role" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:border-sky-400 focus:outline-none">
+            <option value="Software Implementation / ERP">Software Implementation / ERP</option>
+            <option value="AI / Machine Learning Engineer">AI / Machine Learning Engineer</option>
+            <option value="Full-Stack / Web Developer">Full-Stack / Web Developer</option>
+            <option value="Software Quality Assurance (QA)">Software Quality Assurance (QA)</option>
+            <option value="Other Opportunity">Other Opportunity</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-xs font-mono text-slate-400 mb-1.5">Details / Message *</label>
+          <textarea name="message" rows="3" required placeholder="Share role details, timeline, or project scope..." class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:border-sky-400 focus:outline-none"></textarea>
+        </div>
+        <button type="submit" id="hireSubmitBtn" class="w-full btn-primary py-3 rounded-xl flex items-center justify-center gap-2 transition">
+          <i class="fa-solid fa-paper-plane"></i> Send Inquiry
         </button>
-      </div>
+      </form>
     </div>
   </div>
 
   <!-- PROJECT MODAL -->
-  <div id="projectModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
-    <div class="glass max-w-2xl w-full p-6 sm:p-8 rounded-2xl relative border border-sky-400/20 max-h-[90vh] overflow-y-auto">
-      <button onclick="closeProjectModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white p-2">
-        <i class="fa-solid fa-xmark text-xl"></i>
+  <div id="projectModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/75 backdrop-blur-sm p-4">
+    <div class="glass max-w-lg w-full rounded-2xl p-6 sm:p-8 relative">
+      <button onclick="closeProjectModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl">
+        <i class="fa-solid fa-xmark"></i>
       </button>
-      <div id="projectModalBody"></div>
+      <span id="projBadge" class="inline-block px-3 py-1 rounded-full text-xs font-mono mb-3"></span>
+      <h3 id="projTitle" class="text-2xl font-bold text-white mb-3"></h3>
+      <p id="projDesc" class="text-slate-300 text-sm leading-relaxed mb-4"></p>
+      <div id="projHighlights" class="space-y-2 text-xs text-slate-300 mb-6"></div>
+      <div id="projTech" class="flex flex-wrap gap-2"></div>
     </div>
   </div>
 
   <!-- TOAST -->
-  <div id="toast" class="fixed bottom-6 right-6 z-50 glass px-6 py-3 rounded-xl border border-sky-400/40 text-white text-sm flex items-center gap-3 shadow-xl">
+  <div id="toast" class="fixed bottom-6 right-6 z-50 glass border border-sky-400/50 text-white px-5 py-3.5 rounded-xl shadow-2xl flex items-center gap-3 text-sm font-medium">
     <i class="fa-solid fa-circle-check text-emerald-400"></i>
-    <span id="toastMsg">Copied!</span>
+    <span id="toastMsg">Copied to clipboard!</span>
   </div>
 
   <script>
-    // Mobile menu
-    document.getElementById('menuBtn').addEventListener('click', () => {
-      document.getElementById('mobileMenu').classList.toggle('hidden');
+    // Mobile Menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
     });
-    document.querySelectorAll('#mobileMenu a, #mobileMenu button').forEach(el => {
-      el.addEventListener('click', () => document.getElementById('mobileMenu').classList.add('hidden'));
-    });
+
+    // Toast
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toastMsg').textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 3200);
+    }
+
+    // Copy Email
+    function copyEmail() {
+      navigator.clipboard.writeText('ranamasum2877@gmail.com');
+      showToast('Email copied: ranamasum2877@gmail.com');
+    }
 
     // Hire Modal
+    const hireModal = document.getElementById('hireModal');
     function openHireModal() {
-      const m = document.getElementById('hireModal');
-      m.classList.remove('hidden');
-      m.classList.add('flex');
-      document.body.style.overflow = 'hidden';
+      hireModal.classList.remove('hidden');
+      hireModal.classList.add('flex');
     }
     function closeHireModal() {
-      const m = document.getElementById('hireModal');
-      m.classList.add('hidden');
-      m.classList.remove('flex');
-      document.body.style.overflow = '';
+      hireModal.classList.add('hidden');
+      hireModal.classList.remove('flex');
+    }
+    hireModal.addEventListener('click', (e) => { if (e.target === hireModal) closeHireModal(); });
+
+    // Formspree AJAX Submission Helper
+    async function handleFormspreeSubmit(form, btnId, defaultHtml, onSuccessExtra) {
+      const btn = document.getElementById(btnId);
+      const originalHtml = btn.innerHTML;
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+
+      try {
+        const formData = new FormData(form);
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          form.reset();
+          showToast('Message sent successfully! It will arrive in your Gmail.');
+          if (onSuccessExtra) onSuccessExtra();
+        } else {
+          showToast('Could not send message. Please check your Formspree link.');
+        }
+      } catch (err) {
+        showToast('Network error. Please try again.');
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = originalHtml || defaultHtml;
+      }
     }
 
+    document.getElementById('hireForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      handleFormspreeSubmit(
+        this,
+        'hireSubmitBtn',
+        '<i class="fa-solid fa-paper-plane"></i> Send Inquiry',
+        closeHireModal
+      );
+    });
+
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      handleFormspreeSubmit(
+        this,
+        'contactSubmitBtn',
+        '<i class="fa-solid fa-paper-plane"></i> Send Message'
+      );
+    });
+
     // Project Modal
-    const projects = {
+    const projectsData = {
       1: {
-        title: "AI-Based Financial Transaction Monitoring & Fraud Prevention",
-        tech: "Python • XGBoost • SHAP • Scikit-learn • Graph Feature Engineering",
-        points: [
-          "Led the project team developing an AI-based approach to financial transaction monitoring and fraud prevention.",
-          "Built predictive XGBoost models specialized for imbalanced financial fraud datasets.",
-          "Implemented graph-based feature extraction to model relational transaction paths.",
-          "Integrated SHAP (Explainable AI) to provide transparent risk metrics for regulatory compliance.",
-          "Configured concept drift monitoring to track shifts in fraud behavior over time.",
-          "Successfully demonstrated as Team Leader at the 3rd SISE organized by IEEE UITS and received certification."
-        ]
+        badge: 'AI / Machine Learning',
+        badgeClass: 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/40',
+        title: 'AI Financial Fraud Detection',
+        desc: 'Final-year undergraduate thesis project led as Team Leader, focused on detecting anomalous financial transactions and preventing fraud using machine learning, graph-based features, concept drift handling, and model explainability.',
+        highlights: [
+          '• Served as Team Leader from ideation to demonstration',
+          '• Demonstrated at the 3rd SISE organized by IEEE UITS',
+          '• Received formal certification for project demonstration'
+        ],
+        tech: ['Python', 'XGBoost', 'SHAP', 'Scikit-Learn', 'Graph Features', 'Concept Drift']
       },
       2: {
-        title: "Inventory Management System",
-        tech: "PHP • MySQL • JavaScript • HTML5 • CSS3",
-        points: [
-          "Full-stack web application designed for enterprise product and inventory management.",
-          "Implemented stock tracking, sales order logging, and supplier management interfaces.",
-          "Optimized MySQL relational database structure for fast queries and historical reporting.",
-          "Focused on clean data organization and practical business workflow support."
-        ]
+        badge: 'Web Application',
+        badgeClass: 'bg-blue-500/20 text-blue-400 border border-blue-500/40',
+        title: 'Inventory Management System',
+        desc: 'Web-based stock and inventory management system designed to streamline product tracking, sales entries, supplier records, and relational database queries.',
+        highlights: [
+          '• Real-time product stock & sales tracking',
+          '• Structured relational database schema',
+          '• Clean interface for operational records'
+        ],
+        tech: ['PHP', 'MySQL', 'JavaScript', 'HTML5', 'CSS3']
       },
       3: {
-        title: "Hospital Management System",
-        tech: "PHP • MySQL • JavaScript • HTML5 • CSS3",
-        points: [
-          "Centralized hospital software automating patient registrations and doctor scheduling.",
-          "Integrated appointment tracking and structured billing generation modules.",
-          "Engineered relational database design with attention to patient data integrity and security.",
-          "Covered core healthcare workflows including prescription histories."
-        ]
+        badge: 'Web Application',
+        badgeClass: 'bg-blue-500/20 text-blue-400 border border-blue-500/40',
+        title: 'Hospital Management System',
+        desc: 'Web application developed to manage core hospital operations including patient registration, doctor appointments, medical/prescription records, and billing.',
+        highlights: [
+          '• Patient & appointment workflow management',
+          '• Centralized clinical & billing records',
+          '• Relational database backend'
+        ],
+        tech: ['PHP', 'MySQL', 'JavaScript', 'HTML5', 'CSS3']
       }
     };
 
+    const projectModal = document.getElementById('projectModal');
     function openProjectModal(id) {
-      const p = projects[id];
-      if (!p) return;
-      document.getElementById('projectModalBody').innerHTML = `
-        <h3 class="text-2xl font-bold text-white mb-2">${p.title}</h3>
-        <p class="text-xs font-mono text-sky-400 mb-4">${p.tech}</p>
-        <div class="space-y-3 text-sm text-slate-300 leading-relaxed border-t border-slate-700 pt-4">
-          ${p.points.map(pt => `<p>• ${pt}</p>`).join('')}
-        </div>
-      `;
-      const m = document.getElementById('projectModal');
-      m.classList.remove('hidden');
-      m.classList.add('flex');
-      document.body.style.overflow = 'hidden';
+      const p = projectsData[id];
+      const badgeEl = document.getElementById('projBadge');
+      badgeEl.textContent = p.badge;
+      badgeEl.className = `inline-block px-3 py-1 rounded-full text-xs font-mono mb-3 ${p.badgeClass}`;
+      document.getElementById('projTitle').textContent = p.title;
+      document.getElementById('projDesc').textContent = p.desc;
+      document.getElementById('projHighlights').innerHTML = p.highlights.map(h => `<p>${h}</p>`).join('');
+      document.getElementById('projTech').innerHTML = p.tech.map(t => `<span class="px-3 py-1 rounded-lg bg-slate-800 border border-slate-700 text-xs font-mono text-slate-200">${t}</span>`).join('');
+      projectModal.classList.remove('hidden');
+      projectModal.classList.add('flex');
     }
     function closeProjectModal() {
-      const m = document.getElementById('projectModal');
-      m.classList.add('hidden');
-      m.classList.remove('flex');
-      document.body.style.overflow = '';
+      projectModal.classList.add('hidden');
+      projectModal.classList.remove('flex');
     }
-
-    // Close modals on outside click
-    ['hireModal', 'projectModal'].forEach(id => {
-      document.getElementById(id).addEventListener('click', e => {
-        if (e.target.id === id) {
-          if (id === 'hireModal') closeHireModal();
-          else closeProjectModal();
-        }
-      });
-    });
-
-    // Copy email
-    function copyEmail() {
-      navigator.clipboard.writeText('masumrana449@gmail.com').then(() => {
-        showToast('Email copied: masumrana449@gmail.com');
-      }).catch(() => {
-        showToast('Email: masumrana449@gmail.com');
-      });
-    }
-
-    function showToast(msg) {
-      const t = document.getElementById('toast');
-      document.getElementById('toastMsg').textContent = msg;
-      t.classList.add('show');
-      setTimeout(() => t.classList.remove('show'), 3000);
-    }
-
-    // Form handling - Formspree + fallback
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-      // Update reply-to
-      const email = document.getElementById('emailInput').value;
-      document.getElementById('formEmail').value = email;
-      
-      // Formspree will handle the actual send.
-      // If Formspree is not configured yet, we still show success and open mailto as backup.
-      showToast('Thank you! Your message is being sent...');
-      
-      // Optional: also open mailto as reliable fallback
-      setTimeout(() => {
-        // Formspree processes the form. If user hasn't set up Formspree yet,
-        // they can still use the Hire Me → Email button which uses mailto.
-      }, 500);
-    });
+    projectModal.addEventListener('click', (e) => { if (e.target === projectModal) closeProjectModal(); });
   </script>
 </body>
 </html>
