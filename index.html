@@ -141,7 +141,10 @@
             <button onclick="openHireModal()" class="btn-primary px-8 py-4 rounded-xl text-base flex items-center gap-3 transition">
               <i class="fa-solid fa-briefcase"></i> Hire Me Now
             </button>
-            <a href="#projects" class="px-8 py-4 rounded-xl glass-card text-white font-semibold flex items-center gap-2 hover:border-sky-400/50">
+            <a href="Md_Masum_Rana_CV.pdf" download="Md_Masum_Rana_CV.pdf" class="px-8 py-4 rounded-xl glass-card text-emerald-400 font-semibold flex items-center gap-2 hover:border-emerald-400/50 transition">
+              <i class="fa-solid fa-file-pdf"></i> Download CV
+            </a>
+            <a href="#projects" class="px-8 py-4 rounded-xl glass-card text-white font-semibold flex items-center gap-2 hover:border-sky-400/50 transition">
               View Projects <i class="fa-solid fa-arrow-right text-sky-400"></i>
             </a>
           </div>
@@ -727,87 +730,4 @@
         showToast('Network error. Please try again.');
       } finally {
         btn.disabled = false;
-        btn.innerHTML = originalHtml || defaultHtml;
-      }
-    }
-
-    document.getElementById('hireForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      handleFormspreeSubmit(
-        this,
-        'hireSubmitBtn',
-        '<i class="fa-solid fa-paper-plane"></i> Send Inquiry',
-        closeHireModal
-      );
-    });
-
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      handleFormspreeSubmit(
-        this,
-        'contactSubmitBtn',
-        '<i class="fa-solid fa-paper-plane"></i> Send Message'
-      );
-    });
-
-    // Project Modal
-    const projectsData = {
-      1: {
-        badge: 'AI / Machine Learning',
-        badgeClass: 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/40',
-        title: 'AI Financial Fraud Detection',
-        desc: 'Final-year undergraduate thesis project led as Team Leader, focused on detecting anomalous financial transactions and preventing fraud using machine learning, graph-based features, concept drift handling, and model explainability.',
-        highlights: [
-          '• Served as Team Leader from ideation to demonstration',
-          '• Demonstrated at the 3rd SISE organized by IEEE UITS',
-          '• Received formal certification for project demonstration'
-        ],
-        tech: ['Python', 'XGBoost', 'SHAP', 'Scikit-Learn', 'Graph Features', 'Concept Drift']
-      },
-      2: {
-        badge: 'Web Application',
-        badgeClass: 'bg-blue-500/20 text-blue-400 border border-blue-500/40',
-        title: 'Inventory Management System',
-        desc: 'Web-based stock and inventory management system designed to streamline product tracking, sales entries, supplier records, and relational database queries.',
-        highlights: [
-          '• Real-time product stock & sales tracking',
-          '• Structured relational database schema',
-          '• Clean interface for operational records'
-        ],
-        tech: ['PHP', 'MySQL', 'JavaScript', 'HTML5', 'CSS3']
-      },
-      3: {
-        badge: 'Web Application',
-        badgeClass: 'bg-blue-500/20 text-blue-400 border border-blue-500/40',
-        title: 'Hospital Management System',
-        desc: 'Web application developed to manage core hospital operations including patient registration, doctor appointments, medical/prescription records, and billing.',
-        highlights: [
-          '• Patient & appointment workflow management',
-          '• Centralized clinical & billing records',
-          '• Relational database backend'
-        ],
-        tech: ['PHP', 'MySQL', 'JavaScript', 'HTML5', 'CSS3']
-      }
-    };
-
-    const projectModal = document.getElementById('projectModal');
-    function openProjectModal(id) {
-      const p = projectsData[id];
-      const badgeEl = document.getElementById('projBadge');
-      badgeEl.textContent = p.badge;
-      badgeEl.className = `inline-block px-3 py-1 rounded-full text-xs font-mono mb-3 ${p.badgeClass}`;
-      document.getElementById('projTitle').textContent = p.title;
-      document.getElementById('projDesc').textContent = p.desc;
-      document.getElementById('projHighlights').innerHTML = p.highlights.map(h => `<p>${h}</p>`).join('');
-      document.getElementById('projTech').innerHTML = p.tech.map(t => `<span class="px-3 py-1 rounded-lg bg-slate-800 border border-slate-700 text-xs font-mono text-slate-200">${t}</span>`).join('');
-      projectModal.classList.remove('hidden');
-      projectModal.classList.add('flex');
-    }
-    function closeProjectModal() {
-      projectModal.classList.add('hidden');
-      projectModal.classList.remove('flex');
-    }
-    projectModal.addEventListener('click', (e) => { if (e.target === projectModal) closeProjectModal(); });
-  </script>
-</body>
-</html>
+        btn.innerHTML =
